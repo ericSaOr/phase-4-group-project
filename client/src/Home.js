@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import Login from "./Login"
+import ReviewForm from "./ReviewForm"
+import BakedGoodsViews from "./BakedGoodsViews"
 
 function Home() {
 	const [ users, setUsers ] = useState([]);
@@ -9,7 +12,17 @@ function Home() {
 		});
 	}, []);
 	console.log(users);
-	return <div>console.log('hello');</div>;
+
+	
+
+	return (
+		<>
+		<BakedGoodsViews />
+		<Login />
+		<ReviewForm />
+		
+		</>
+	)
 }
 
 export default Home;
