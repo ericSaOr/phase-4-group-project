@@ -41,22 +41,22 @@ Review.create!([
     {
     date_time: 2,
     note: "Not good",
-    user_id: ,
-    bakery_id:  
+    user_id: 1,
+    bakery_id: 1 
     },
 
     {
         date_time: 6,
         note: "This baked good smells bad but I like it.",
-        user_id: ,
-        bakery_id: 
+        user_id: 1,
+        bakery_id: 1
         },
 
         {
             date_time: 3,
             note: "I hate this baked good, refund now.",
-            user_id: ,
-            bakery_id:  
+            user_id: 1,
+            bakery_id: 1
             }
 ])
 
