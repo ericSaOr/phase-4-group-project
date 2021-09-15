@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import BakedGoodsViews from './BakedGoodsViews';
 
 function ReviewForm() {
 	const [ reviews, setReviews ] = useState([]);
@@ -12,9 +13,12 @@ function ReviewForm() {
 
 	function handleDelete(id) {
 		fetch(`/reviews/${id}`, {
-			method: 'DELETE'
+			method: 'DELETE',
+			headers: {
+				'Content-Type': 'application/json'
+			}
 		}).then((r) => {
-			if (r.ok) {
+			{
 				setReviews((reviews) => reviews.filter((review) => review.id === id));
 			}
 		});
@@ -22,7 +26,7 @@ function ReviewForm() {
 
 	return (
 		<div>
-			<button onClick={() => handleDelete(reviews.id)}>Delete</button>;
+			<BakedGoodsViews handleDelete={handleDelete()} reviews={reviews} />
 		</div>
 	);
 }

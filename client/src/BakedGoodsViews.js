@@ -1,25 +1,23 @@
 import React, { useState, useEffect } from 'react';
 
-function BakedGoodsViews() {
+function BakedGoodsViews({ handleDelete, reviews }) {
 	const [ bakeItems, setBakeItems ] = useState([]);
 
-    useEffect(() => {
+	useEffect(() => {
 		fetch('/reviews').then((response) => response.json()).then((bakedData) => {
 			setBakeItems(bakedData);
 		});
 	}, []);
-	console.log(bakeItems);
+
 	return bakeItems.map((bakeItem) => {
 		return (
 			<div className="bake-item">
 				<img src={bakeItem.bakery.image} alt="A delicious donut" />
 				<p>{bakeItem.note}</p>
-				<button onClick={() => handleDelete(reviews.id)}>Delete</button>;
+				<button onClick={() => handleDelete(bakeItems.id)}>Delete</button>
 			</div>
 		);
 	});
-
 }
-
 
 export default BakedGoodsViews;
