@@ -17,7 +17,10 @@ function Home() {
 
 	return (
 		<>
-		<BakedGoodsViews />
+		<BakedGoodsViews
+		// deleteButton = {}
+		
+		/>
 		<Login />
 		<ReviewForm />
 		

@@ -35,33 +35,6 @@ Bakery.create!([
   }])
 puts ':white_check_mark: Done seeding!'
 
-
-puts "Seeding reviews..."
-Review.create!([
-    {
-    date_time: 2,
-    note: "Not good",
-    user_id: 1,
-    bakery_id: 1 
-    },
-
-    {
-        date_time: 6,
-        note: "This baked good smells bad but I like it.",
-        user_id: 1,
-        bakery_id: 1
-        },
-
-        {
-            date_time: 3,
-            note: "I hate this baked good, refund now.",
-            user_id: 1,
-            bakery_id: 1
-            }
-])
-
-puts "✅ Done seeding!"
-
 puts "🏕️ Seeding users..."
 
 user1 = User.create(name: 'Caitlin', password: 'noot1')
@@ -69,3 +42,30 @@ user2 = User.create(name: 'Rose', password: 'noot3')
 user3 = User.create(name: 'Kachaaa', password: 'noot4')
 
 puts "✅ Done seeding!"
+
+puts "Seeding reviews..."
+
+# Signup.create(camper_id: camper1.id, activity_id: activity2.id, time: 11)
+
+    review1 = Review.create(
+        date_time: 2,
+        note: "Not good",
+        user_id: User.all.sample.id,
+        bakery_id: Bakery.all.sample.id)
+    
+
+    review2 = Review.create(
+        date_time: 6,
+        note: "This baked good smells bad but I like it.",
+        user_id: User.all.sample.id,
+        bakery_id: Bakery.all.sample.id)
+
+    review3 = Review.create(
+        date_time: 3,
+        note: "I hate this baked good, refund now.",
+        user_id: User.all.sample.id,
+        bakery_id: Bakery.all.sample.id
+        )
+
+puts "✅ Done seeding!"
+
