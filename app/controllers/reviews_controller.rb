@@ -2,6 +2,7 @@ class ReviewsController < ApplicationController
     rescue_from ActiveRecord::RecordInvalid, with: :invalid_response
 
     def index
+        session[:user_id] = ""
         reviews = Review.all
         render json: reviews 
     end
@@ -19,8 +20,8 @@ class ReviewsController < ApplicationController
 
     def destroy
         review = find_review
-        review.destroy
-        head :no_content
+        render json: review.destroy 
+        
     end
 
 

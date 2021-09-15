@@ -1,34 +1,33 @@
 import React, { useState, useEffect } from 'react';
-import BakedGoodsViews from './BakedGoodsViews';
 
 function ReviewForm() {
-	const [ reviews, setReviews ] = useState([]);
+	// const [ reviews, setReviews ] = useState([]);
 
-	useEffect(() => {
-		fetch('/reviews').then((r) => r.json()).then((reviewData) => {
-			setReviews(reviewData);
-		});
-	}, []);
-	console.log(reviews);
+	// useEffect(() => {
+	// 	fetch('/reviews').then((r) => r.json()).then((reviewData) => {
+	// 		setReviews(reviewData);
+	// 	});
+	// }, []);
+	// console.log(reviews);
 
-	function handleDelete(id) {
-		fetch(`/reviews/${id}`, {
-			method: 'DELETE',
-			headers: {
-				'Content-Type': 'application/json'
-			}
-		}).then((r) => {
-			{
-				setReviews((reviews) => reviews.filter((review) => review.id === id));
-			}
-		});
-	}
+	// 		function handleDelete(id) {
+	// 			fetch(`http://localhost:3000/reviews/${id}`, {
+	// 				method: 'DELETE',
+	// 				headers: {
+	// 					"Content-Type": "application/json",
+	// 					},
+	// 			})
+	// 				.then((res) => res.json())
+	// 				.then((deletedReviews) =>
+	// 					setReviews((prevReviews) => {
+	// 						const copyArray = [ ...prevReviews ];
+	// 						const index = copyArray.findIndex((review) => deletedReviews.id === review.id);
+	// 						copyArray.splice(index, 1);
+	// 						return copyArray;
+	// 					})
+	// 				);
 
-	return (
-		<div>
-			<BakedGoodsViews handleDelete={handleDelete()} reviews={reviews} />
-		</div>
-	);
+	return <div>0</div>;
 }
 
 export default ReviewForm;

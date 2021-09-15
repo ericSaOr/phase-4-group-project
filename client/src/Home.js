@@ -7,7 +7,7 @@ import BakedGoodsViews from "./BakedGoodsViews"
 function Home() {
 	const [ users, setUsers ] = useState([]);
 	useEffect(() => {
-		fetch('/users').then((r) => r.json()).then((userData) => {
+		fetch('/reviews').then((r) => r.json()).then((userData) => {
 			setUsers(userData);
 		});
 	}, []);
@@ -17,9 +17,8 @@ function Home() {
 
 	return (
 		<>
-		<BakedGoodsViews/>
-		<Login />
-		<ReviewForm />
+			<BakedGoodsViews/>
+			<ReviewForm />
 		
 		</>
 	)
