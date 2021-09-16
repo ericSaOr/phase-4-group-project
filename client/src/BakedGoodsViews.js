@@ -12,9 +12,8 @@ function BakedGoodsViews() {
 	console.log(reviewItems);
 
 	function mapReviews() {
-		reviewItems.map((reviewItem) => {
-			return (
-				<div className="bake-item">
+		return reviewItems.map((reviewItem) => {
+					<div className="bake-item">
 					<img src={reviewItem.bakery.image} alt="A delicious donut" />
 					<p>{reviewItem.note}</p>
 					<button
@@ -25,7 +24,7 @@ function BakedGoodsViews() {
 						Delete
 					</button>
 				</div>
-			);
+			
 		});
 
 		function handleDelete(id) {

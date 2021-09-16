@@ -2,7 +2,7 @@ class ReviewsController < ApplicationController
     rescue_from ActiveRecord::RecordInvalid, with: :invalid_response
 
     def index
-        session[:user_id] = ""
+        # session[:user_id] = user.id
         reviews = Review.all
         render json: reviews 
     end
